@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Failures & Fixes | Alex Joyel Raj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="failures.html">Failures</a></li> 
+      <li><a href="wins.html">Wall of Wins</a></li>     
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Failures & Fixes</h1>
+    <p>This space is where I log every bug, failure, or challenge that helped me grow.</p>
+
+    <div class="failure-form">
+      <input type="date" id="failure-date" />
+      <textarea id="failure-text" placeholder="What went wrong? What did you learn?"></textarea>
+      <button onclick="addFailure()">Add</button>
+    </div>
+
+    <div id="failures-list" class="failures-list"></div>
+  </main>
+
+  <script>
+    let failures = JSON.parse(localStorage.getItem('failures')) || [];
+
+    function renderFailures() {
+      const list = document.getElementById('failures-list');
+      list.innerHTML = '';
+      failures.forEach((entry, index) => {
+        list.innerHTML += `
+          <div class="failure-entry">
+            <time>${entry.date}</time>
+            <p contenteditable="false" id="text-${index}">${entry.text}</p>
+            <div class="failure-actions">
+              <button onclick="editFailure(${index})">Edit</button>
+              <button onclick="deleteFailure(${index})">Delete</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function addFailure() {
+      const date = document.getElementById('failure-date').value;
+      const text = document.getElementById('failure-text').value.trim();
+      if (!date || !text) return alert('Date and text are required.');
+
+      failures.unshift({ date, text });
+      localStorage.setItem('failures', JSON.stringify(failures));
+      document.getElementById('failure-text').value = '';
+      renderFailures();
+    }
+
+    function deleteFailure(index) {
+      if (confirm('Delete this entry?')) {
+        failures.splice(index, 1);
+        localStorage.setItem('failures', JSON.stringify(failures));
+        renderFailures();
+      }
+    }
+
+    function editFailure(index) {
+      const p = document.getElementById(`text-${index}`);
+      if (p.contentEditable === 'true') {
+        p.contentEditable = 'false';
+        failures[index].text = p.innerText.trim();
+        localStorage.setItem('failures', JSON.stringify(failures));
+        renderFailures();
+      } else {
+        p.contentEditable = 'true';
+        p.focus();
+      }
+    }
+
+    renderFailures();
+  </script>
+</body>
+</html>

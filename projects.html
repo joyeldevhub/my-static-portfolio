@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Alex Joyel Raj</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="failures.html">Failures</a></li>
+      <li><a href="wins.html">Wall of Wins</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h1>Projects</h1>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <h2>PM2-AWS: One-Click Node App Deployment</h2>
+        <p>Deploy a Node.js app in seconds using Terraform + PM2 on an EC2 instance.
+            The setup installs Node.js, clones your Git repo, installs dependencies, and runs the app with PM2 auto-restart — all on launch.
+            App goes live at http://<EC2-IP>:3000 instantly.</p>
+        <p><strong>Stack:</strong> Terraform, AWS EC2, PM2, GitHub</p>
+        <a href="https://github.com/joyeldevhub/PM2-AWS" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h2>Ansible Infrastructure Automation</h2>
+        <p>Automated full-stack AWS infrastructure with Ansible — VPCs, EC2s, jump hosts, and service deployment, all managed through modular roles and tagged playbooks.</p>
+        <p><strong>Stack:</strong> Ansible, AWS ( EC2, VPC, IAM, Security Groups), GitHub (Development, Staging, Production)</p>
+        <a href="https://github.com/joyeldevhub/Ansible-Project" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h2>AWS Static Website with CI/CD</h2>
+        <p>Hosted a static portfolio on S3 with GitHub Actions for CI/CD deployment and custom domain setup.</p>
+        <p><strong>Stack:</strong> AWS S3, Route53, GitHub Actions</p>
+        <a href="https://github.com/your-username/static-site-cicd" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

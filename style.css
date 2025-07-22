@@ -1,0 +1,287 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+nav {
+  background-color: #111;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+/* .terminal {
+  font-family: 'Courier New', monospace;
+  background: #111;
+  color: #eee;
+  padding: 1rem;
+  border-left: 3px solid #777;
+} */
+
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.btn-group {
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  margin: 0 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #444;
+}
+
+.btn-secondary {
+  background-color: #000;
+  border: 1px solid #666;
+}
+
+
+/* About Section */
+/* Page Content */
+.content {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.about-section {
+  margin-top: 2rem;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  color: #ddd;
+  margin-bottom: 0.5rem;
+}
+
+.about-section ul {
+  list-style: square;
+  padding-left: 1.5rem;
+}
+
+.tool-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+
+
+
+/* Project Section */
+/* Project Grid */
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #111;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #eee;
+}
+
+.project-card p {
+  margin: 0.5rem 0;
+  color: #aaa;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #88f;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* Articles Section */
+/* Articles */
+.articles-list {
+  margin-top: 2rem;
+}
+
+.article-item {
+  margin-bottom: 2rem;
+}
+
+.article-item h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.article-item a {
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.article-item a:hover {
+  color: #fff;
+}
+
+
+
+/* Failures Section */
+/* Failures Page */
+.failure-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.failure-form input,
+.failure-form textarea {
+  background-color: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.75rem;
+  font-family: monospace;
+}
+
+.failure-form button {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.failures-list {
+  margin-top: 2rem;
+}
+
+.failure-entry {
+  background-color: #111;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+}
+
+.failure-entry time {
+  font-size: 0.9rem;
+  color: #888;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.failure-actions {
+  margin-top: 0.5rem;
+}
+
+.failure-actions button {
+  margin-right: 1rem;
+  background-color: #000;
+  border: 1px solid #444;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0.3rem 0.75rem;
+}
+
+.failure-entry p[contenteditable="true"] {
+  border: 1px dashed #555;
+  padding: 0.5rem;
+  background: #000;
+}
+
+
+
+
+/* Contact Section */
+.contact-info {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.contact-info a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+/* Win wall Section */
+.wins-list {
+  margin-top: 2rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.wins-list li {
+  background-color: #111;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-left: 4px solid #888;
+  font-size: 1rem;
+  color: #ccc;
+}
