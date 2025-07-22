@@ -46,6 +46,18 @@ nav {
 } */
 
 
+.project-date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.project-card strong {
+  color: #ffffffda; /* or try #111111 or #2563eb */
+  font-weight: 600;
+}
+
+
 /* Hero Section */
 .hero {
   text-align: center;

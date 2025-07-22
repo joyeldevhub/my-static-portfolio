@@ -23,68 +23,19 @@
     <h1>Failures & Fixes</h1>
     <p>This space is where I log every bug, failure, or challenge that helped me grow.</p>
 
-    <div class="failure-form">
-      <input type="date" id="failure-date" />
-      <textarea id="failure-text" placeholder="What went wrong? What did you learn?"></textarea>
-      <button onclick="addFailure()">Add</button>
-    </div>
-
-    <div id="failures-list" class="failures-list"></div>
+    <div class="project-grid">
+      <div class="project-card">
+      <h2>GET vs POST: The Mistake That Postman Fixed</h2>
+       <p class="project-date">📅 July 23, 2025</p>
+        <p><strong>Mistake: </strong>While learning APIs, I thought GET and POST were the same—mainly because I hadn’t used Postman before.<br>
+          <strong>What I Learned: </strong>After using Postman and experimenting with API calls, I understood the core differences:
+          <br>1. GET is used to retrieve data<br>2. POST is used to send or create new data.<br>
+          This hands-on experience cleared up the confusion and improved my understanding of HTTP methods.<br>
+          <strong>How I Fixed It: </strong>I practiced real API calls using Postman. I tested both methods, 
+          observed the request and response structures, and read basic REST documentation to reinforce the 
+          concepts.
+        </p>
+      </div>
   </main>
-
-  <script>
-    let failures = JSON.parse(localStorage.getItem('failures')) || [];
-
-    function renderFailures() {
-      const list = document.getElementById('failures-list');
-      list.innerHTML = '';
-      failures.forEach((entry, index) => {
-        list.innerHTML += `
-          <div class="failure-entry">
-            <time>${entry.date}</time>
-            <p contenteditable="false" id="text-${index}">${entry.text}</p>
-            <div class="failure-actions">
-              <button onclick="editFailure(${index})">Edit</button>
-              <button onclick="deleteFailure(${index})">Delete</button>
-            </div>
-          </div>
-        `;
-      });
-    }
-
-    function addFailure() {
-      const date = document.getElementById('failure-date').value;
-      const text = document.getElementById('failure-text').value.trim();
-      if (!date || !text) return alert('Date and text are required.');
-
-      failures.unshift({ date, text });
-      localStorage.setItem('failures', JSON.stringify(failures));
-      document.getElementById('failure-text').value = '';
-      renderFailures();
-    }
-
-    function deleteFailure(index) {
-      if (confirm('Delete this entry?')) {
-        failures.splice(index, 1);
-        localStorage.setItem('failures', JSON.stringify(failures));
-        renderFailures();
-      }
-    }
-
-    function editFailure(index) {
-      const p = document.getElementById(`text-${index}`);
-      if (p.contentEditable === 'true') {
-        p.contentEditable = 'false';
-        failures[index].text = p.innerText.trim();
-        localStorage.setItem('failures', JSON.stringify(failures));
-        renderFailures();
-      } else {
-        p.contentEditable = 'true';
-        p.focus();
-      }
-    }
-
-    renderFailures();
-  </script>
 </body>
 </html>
