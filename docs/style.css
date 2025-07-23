@@ -37,15 +37,6 @@ nav {
   display: inline;
 }
 
-/* .terminal {
-  font-family: 'Courier New', monospace;
-  background: #111;
-  color: #eee;
-  padding: 1rem;
-  border-left: 3px solid #777;
-} */
-
-
 .project-date {
   font-size: 0.9rem;
   color: gray;
@@ -53,10 +44,9 @@ nav {
 }
 
 .project-card strong {
-  color: #ffffffda; /* or try #111111 or #2563eb */
+  color: #ffffffda;
   font-weight: 600;
 }
-
 
 /* Hero Section */
 .hero {
@@ -97,9 +87,7 @@ nav {
   border: 1px solid #666;
 }
 
-
 /* About Section */
-/* Page Content */
 .content {
   max-width: 800px;
   margin: 4rem auto;
@@ -136,11 +124,7 @@ nav {
   padding: 0;
 }
 
-
-
-
 /* Project Section */
-/* Project Grid */
 .project-grid {
   display: grid;
   gap: 2rem;
@@ -173,14 +157,7 @@ nav {
   text-decoration: underline;
 }
 
-
-
-
-
-
-
 /* Articles Section */
-/* Articles */
 .articles-list {
   margin-top: 2rem;
 }
@@ -203,10 +180,7 @@ nav {
   color: #fff;
 }
 
-
-
 /* Failures Section */
-/* Failures Page */
 .failure-form {
   display: flex;
   flex-direction: column;
@@ -268,9 +242,6 @@ nav {
   background: #000;
 }
 
-
-
-
 /* Contact Section */
 .contact-info {
   margin-top: 2rem;
@@ -282,7 +253,7 @@ nav {
   text-decoration: underline;
 }
 
-/* Win wall Section */
+/* Win Wall Section */
 .wins-list {
   margin-top: 2rem;
   list-style: none;
@@ -296,4 +267,56 @@ nav {
   border-left: 4px solid #888;
   font-size: 1rem;
   color: #ccc;
+}
+
+/* -------------------------- */
+/*         MEDIA QUERY        */
+/* -------------------------- */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    display: block;
+    margin: 1rem auto;
+  }
+
+  .content {
+    padding: 0 1rem;
+  }
+
+  .tool-list {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .article-item h2 {
+    font-size: 1rem;
+  }
+
+  .wins-list li {
+    font-size: 0.95rem;
+  }
+
+  nav {
+    padding: 1rem;
+  }
 }
